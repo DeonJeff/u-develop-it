@@ -26,7 +26,15 @@ app.use((req, res) => {
     res.status(404).end();
   });
 
-  db.query('SELECT * FROM candidates', (err, rows) => {
+  // GET a single candidate
+db.query(`SELECT * FROM candidates WHERE id = 1`, (err, row) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log(row);
+  });
+
+ // db.query('SELECT * FROM candidates', (err, rows) => {
     console.log(rows);
 });
   
